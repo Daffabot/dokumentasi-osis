@@ -63,24 +63,31 @@ Absen: 08<br>
 <div class="comment" style="background: #00FFFF; height: auto">
 <br>
 <p align="center" style="font-size: 20px width: auto; height: auto;">Ajukan Pertanyaan Di Komentar</p>
-<div id="disqus_thread" style="margin-left: 6%; margin-right: 6%;"></div>
-<div id="disqus-comments">
-    <button id="daffabot">Buka Komentar</button> <!--Tulisan di tombol -->
-</div>
-<script> //<![CDATA[
-    // Call Disqus On Click by IGNIEL.COM
-    $('#daffabot').on('click', function(){
-    var disqus_shortname = 'dokumentasi-osis' // Ganti dengan shortname Disqus kamu
-        $.ajax({
-             type: 'GET',
-             url: '//' + disqus_shortname + '.disqus.com/embed.js',
-             dataType: 'script',
-             cache: true
-        });
-        $(this).fadeOut();
-    });
-//]]> </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<div class="row">
+		<div class="disqus popzone"></div>
+	</div>
+
+<!--
+	NO DEPENDENCIES (IE9+ support)
+-->
+
+<script src="disqusloader.js"></script>
+<script>
+
+	
+	disqusLoader( '.disqus',
+	{
+		scriptUrl:		'//dokumentasi-osis.disqus.com/embed.js',
+		disqusConfig:	function()
+		{
+			this.page.identifier 	= 'Dokumentasi OSIS';
+			this.page.url			= 'https://www.daffabot.my.id/dokumentasi-osis.github.io';
+			this.page.title			= 'Dokumentasi OSIS SMPN 1 Kalijati';
+		}
+	});
+
+	
+</script>
 <br>
 </div>
 <br>
